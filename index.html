@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jessy Token DApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Jessy Token DApp</h1>
+    <div class="wallet-box">
+      <button class="btn-connect" id="connectBtn">🔗 Connect Phantom</button>
+      <span id="walletStatus"></span>
+      <span id="jsyBalance" class="balance-display"></span>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <ul>
+      <li onclick="showSection('rebound')">Rebound</li>
+      <li onclick="showSection('academy')">Academy</li>
+      <li onclick="showSection('event')">Event</li>
+      <li onclick="showSection('stream')">Stream</li>
+    </ul>
+  </div>
+
+  <div class="main" id="mainContent">
+    <div id="rebound" class="card section" style="display:none;">
+      <h2>📉 Rebound Claim</h2>
+      <p>If you suffered a trading loss recently, Jessy will support you with JSY airdrop.</p>
+      <button class="btn-action" id="analyzeBtn" onclick="startAnalysis()" style="display:none;">Submit Rebound Request</button>
+      <div class="progress-bar"><div class="progress-bar-inner" id="progressFill"></div></div>
+      <div id="processLog"></div>
+      <button class="btn-action" id="claimBtn" style="display:none;" onclick="finalizeClaim()">Claim 200 JSY</button>
+    </div>
+
+    <div id="academy" class="card section" style="display:none;">
+      <h2>🎓 Academy</h2>
+      <p>Learn safe trading strategies to avoid mistakes in the future.</p>
+    </div>
+
+    <div id="event" class="card section" style="display:none;">
+      <h2>🏆 Event</h2>
+      <p>Compete in the worst loss stories contest. Community votes, prizes distributed in JSY.</p>
+    </div>
+
+    <div id="stream" class="card section" style="display:none;">
+      <h2>🎥 Stream</h2>
+      <p>Watch live trading sessions and strategy reviews from top community members. Pay in JSY, streamers earn rewards.</p>
+    </div>
+  </div>
+
+  <div id="finalMessage" class="card" style="display:none; text-align:center;">
+    <h2>🎯 You've received your airdrop!</h2>
+    <p>To avoid future losses, we strongly recommend completing the Academy section.</p>
+  </div>
+
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
